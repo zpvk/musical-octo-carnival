@@ -9,4 +9,18 @@
         </session-timeout>
     </session-config>
 
+    <!-- Servlet Declaration -->
+    <servlet>
+        <servlet-name>AddtoCartController</servlet-name>
+        <servlet-class>com.ecom.controller.AddtoCartController</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mapping -->
+    <servlet-mapping>
+        <servlet-name>AddtoCartController</servlet-name>
+        <url-pattern>/addtocart</url-pattern>
+    </servlet-mapping>
+
+
+
 </web-app>

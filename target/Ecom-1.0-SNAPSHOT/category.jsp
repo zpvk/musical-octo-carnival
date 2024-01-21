@@ -1,7 +1,7 @@
 <%@ page import="com.ecom.model.Categories" %>
 <%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
-  User: rohan
+  User: pasindu
   Date: 2023-12-30
   Time: 00:16
   To change this template use File | Settings | File Templates.
@@ -12,13 +12,28 @@
   <title>Product Categories</title>
   <!-- Add Bootstrap CSS link here -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+  body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  }
+
+  main{
+  flex: 1;
+  }
+
+  footer{
+  margin-top: auto;
+  }
+  </style>
 </head>
 <body>
 
 <%@ include file="header.jsp" %>
 
 
-<div class="container mt-5">
+<main class="container mt-5">
   <h2>Product Categories</h2>
 
   <div class="list-group">
@@ -34,7 +49,7 @@
     %>
   </div>
 
-</div>
+</main>
 
 <%@ include file="footer.jsp" %>
 

@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: rohan
+  User: pasindu
   Date: 2023-12-29
   Time: 02:57
   To change this template use File | Settings | File Templates.
@@ -17,7 +17,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.jsp">E-commerce</a>
+    <a class="navbar-brand" href="index.jsp">Green Super Market</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,7 +30,7 @@
                 <a class="nav-link" href="/Ecom_war/categories">Category</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Cart</a>
+                <a class="nav-link" href="cart.jsp">Cart</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="profile.jsp">Profile</a>

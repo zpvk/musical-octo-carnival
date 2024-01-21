@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: rohan
+  User: pasindu
   Date: 2023-12-29
   Time: 02:58
   To change this template use File | Settings | File Templates.
@@ -28,17 +28,17 @@
 <body>
 
 <footer class="bg-light text-center mt-5">
-    <div class="container">
+    <div class="container mt-3">
         <div class="row">
             <div class="col-md-6">
                 <h5>About Us</h5>
-                <p>Insert a brief description about your website or company here.</p>
+                <p>One of the nation's leading food service distributors, delivering food and related products to customers across the Sri Lanka.</p>
             </div>
             <div class="col-md-6">
                 <h5>Contact Us</h5>
-                <p>1234 Main Street, City, Country<br>
-                    Phone: +1 (123) 456-7890<br>
-                    Email: info@example.com</p>
+                <p>No:148, Vauxhall Street, Colombo 6, Sri Lanka<br>
+                    Phone: +94 76 876 3456<br>
+                    Email: sales@greensuper.lk</p>
             </div>
         </div>
     </div>

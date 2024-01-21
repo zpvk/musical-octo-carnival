@@ -1,53 +1,110 @@
+<%@ page import="com.ecom.dao.ProductDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.ecom.model.Product" %>
+<%@ page import="com.ecom.dao.ProductImageDAO" %>
+<%@ page import="com.ecom.model.ProductImages" %>
+
 <%--
   Created by IntelliJ IDEA.
-  User: rohan
+  User: pasindu
   Date: 2023-12-29
   Time: 02:49
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Index Page</title>
-    <!-- Add Bootstrap CSS link here -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add your custom styling for product display here */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            width: 22%;
+            margin-bottom: 20px;
+        }
+
+        .card-img-top {
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .btn-add-to-cart {
+            margin-top: 10px;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main{
+            flex: 1;
+        }
+
+        footer{
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body class="text-center">
 
+
 <%@ include file="header.jsp" %>
+<main class="container">
+    <h2 class="mt-4">Product List</h2>
 
-<div class="container mt-5">
-    <h2>Welcome to the E-commerce Website</h2>
-    <p class="lead">Choose an option:</p>
-    <a href="login.jsp" class="btn btn-primary btn-lg m-2">Login</a>
-    <a href="signup.jsp" class="btn btn-success btn-lg m-2">Sign Up</a>
+    <!-- Product List -->
+    <div class="product-container">
+        <!-- Replace the items below with your actual product data -->
 
-    <!-- Display list of products -->
-    <h3 class="mt-5">Featured Products</h3>
-    <div class="row mt-3">
-        <%-- Dummy product data (replace with actual data from backend) --%>
-<%--        <%--%>
-<%--            List<String> products = Arrays.asList("Product 1", "Product 2", "Product 3", "Product 4");--%>
-<%--            for (String product : products) {--%>
-<%--        %>--%>
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <div class="card-body">
-<%--                    <h5 class="card-title"><%= product %></h5>--%>
-<%--                    <!-- Add more details about the product if needed -->--%>
-<%--                    <a href="#" class="btn btn-primary">View Details</a>--%>
-                </div>
+        <%
+            System.out.println("index inside");
+            ProductDAO productDAO = new ProductDAO();
+            List<Product> products = productDAO.getProducts();
+            ProductImageDAO productImageDAO = new ProductImageDAO();
+            String iurl;
+            for (Product product: products){
+                ProductImages uri = productImageDAO.getImgURL(product.getProduct_id());
+                iurl = uri.getImage_url();
+                System.out.println(iurl);
+        %>
+        <div class="card product-card">
+            <img src="<%=iurl%>" class="card-img-top" alt="Product <%=iurl%>">
+            <div class="card-body">
+                <form action="/Ecom_war/addcart" method="post">
+                <h5 class="card-title"><%=product.getName()%></h5>
+                    <h5 class="card-title">USD <%=product.getPrice()%></h5>
+                    <p class="card-text"><%=product.getDescription()%></p>
+                    <input type="number" class="form-control" placeholder="Quantity" name="qti"/>
+                    <input type="hidden" name="product" value="<%=product.getProduct_id()%>">
+                    <%
+                        System.out.println("here we are printing add to cart productID "+product.getProduct_id());
+                    %>
+                <button class="btn btn-primary btn-add-to-cart" type="submit">Add to Cart</button>
+                </form>
             </div>
         </div>
-<%--        <%--%>
-<%--            }--%>
-<%--        %>--%>
+        <% } %>
     </div>
-</div>
 
+    <!-- Next Page Button -->
+    <div class="text-center mt-4">
+        <button class="btn btn-primary">Next Page</button>
+    </div>
+
+
+</main>
 <%@ include file="footer.jsp" %>
 
 <!-- Add Bootstrap JS and Popper.js links here -->

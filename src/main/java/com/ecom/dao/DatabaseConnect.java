@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author rohan
+ * @author pasindu
  */
 public class DatabaseConnect {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/ecom";

@@ -8,6 +8,16 @@ public class Product {
     private int stock_quantity;
     private int category_id;
 
+    private String image_url;
+
+    public String getImage_url() {
+        return image_url;
+    }
+
+    public void setImage_url(String image_url) {
+        this.image_url = image_url;
+    }
+
     public int getProduct_id() {
         return product_id;
     }
@@ -48,7 +58,7 @@ public class Product {
         this.stock_quantity = stock_quantity;
     }
 
-    public int getCategory_id() {
+    public int getCategory_id(int categoryId) {
         return category_id;
     }
 

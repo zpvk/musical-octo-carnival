@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: rohan
+  User: pasindu
   Date: 2023-12-29
   Time: 02:51
   To change this template use File | Settings | File Templates.
@@ -14,10 +14,24 @@
     <title>Login Page</title>
     <!-- Add Bootstrap CSS link here -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main{
+            flex: 1;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<div class="container mt-5">
+<main class="container mt-5">
     <h2>Login</h2>
     <form action="/Ecom_war/login" method="post">
         <div class="form-group">
@@ -31,7 +45,7 @@
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
     <p class="mt-3">Don't have an account? <a href="signup.jsp">Sign Up</a></p>
-</div>
+</main>
 
 <!-- Add Bootstrap JS and Popper.js links here -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
