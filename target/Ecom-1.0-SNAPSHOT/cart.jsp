@@ -109,8 +109,8 @@
 
     <!-- Total -->
     <div class="total">
-        <p class="font-weight-bold">Total: $<%=total%></p>
-        <a href="paynow.jsp" class="btn btn-primary">Checkout</a>
+            <p class="font-weight-bold">Total: $<%=total%></p>
+            <a href="paynow.jsp?total=<%=total%>" class="btn btn-primary">Checkout</a>
     </div>
     <% }else{ %>
         <div id="empty-cart-message" class="alert alert-info mt-3 text-center mx-auto">

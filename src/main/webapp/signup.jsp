@@ -61,7 +61,7 @@
   <h2 class="mt-4">User Registration</h2>
 
   <div class="form-container">
-    <form onsubmit="return checkPasswordMatch()" action="/RegisterServlet" method="post">
+    <form action="/Ecom_war/signup" method="post">
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" class="form-control" id="username" name="username" required>
@@ -82,6 +82,7 @@
     </form>
   </div>
 </main>
+
 
 <%@ include file="footer.jsp" %>
 
